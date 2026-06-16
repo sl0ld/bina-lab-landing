@@ -9,68 +9,8 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TermsRouteImport } from './routes/terms'
-import { Route as TemplatesRouteImport } from './routes/templates'
-import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as LoginRouteImport } from './routes/login'
-import { Route as LandingRouteImport } from './routes/landing'
-import { Route as CoursesRouteImport } from './routes/courses'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as BlogRouteImport } from './routes/blog'
-import { Route as AiDesignRouteImport } from './routes/ai-design'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
-const TermsRoute = TermsRouteImport.update({
-  id: '/terms',
-  path: '/terms',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const TemplatesRoute = TemplatesRouteImport.update({
-  id: '/templates',
-  path: '/templates',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrivacyRoute = PrivacyRouteImport.update({
-  id: '/privacy',
-  path: '/privacy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LoginRoute = LoginRouteImport.update({
-  id: '/login',
-  path: '/login',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LandingRoute = LandingRouteImport.update({
-  id: '/landing',
-  path: '/landing',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CoursesRoute = CoursesRouteImport.update({
-  id: '/courses',
-  path: '/courses',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BlogRoute = BlogRouteImport.update({
-  id: '/blog',
-  path: '/blog',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AiDesignRoute = AiDesignRouteImport.update({
-  id: '/ai-design',
-  path: '/ai-design',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -79,172 +19,28 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/ai-design': typeof AiDesignRoute
-  '/blog': typeof BlogRoute
-  '/contact': typeof ContactRoute
-  '/courses': typeof CoursesRoute
-  '/landing': typeof LandingRoute
-  '/login': typeof LoginRoute
-  '/privacy': typeof PrivacyRoute
-  '/templates': typeof TemplatesRoute
-  '/terms': typeof TermsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/ai-design': typeof AiDesignRoute
-  '/blog': typeof BlogRoute
-  '/contact': typeof ContactRoute
-  '/courses': typeof CoursesRoute
-  '/landing': typeof LandingRoute
-  '/login': typeof LoginRoute
-  '/privacy': typeof PrivacyRoute
-  '/templates': typeof TemplatesRoute
-  '/terms': typeof TermsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/ai-design': typeof AiDesignRoute
-  '/blog': typeof BlogRoute
-  '/contact': typeof ContactRoute
-  '/courses': typeof CoursesRoute
-  '/landing': typeof LandingRoute
-  '/login': typeof LoginRoute
-  '/privacy': typeof PrivacyRoute
-  '/templates': typeof TemplatesRoute
-  '/terms': typeof TermsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/about'
-    | '/ai-design'
-    | '/blog'
-    | '/contact'
-    | '/courses'
-    | '/landing'
-    | '/login'
-    | '/privacy'
-    | '/templates'
-    | '/terms'
+  fullPaths: '/'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/about'
-    | '/ai-design'
-    | '/blog'
-    | '/contact'
-    | '/courses'
-    | '/landing'
-    | '/login'
-    | '/privacy'
-    | '/templates'
-    | '/terms'
-  id:
-    | '__root__'
-    | '/'
-    | '/about'
-    | '/ai-design'
-    | '/blog'
-    | '/contact'
-    | '/courses'
-    | '/landing'
-    | '/login'
-    | '/privacy'
-    | '/templates'
-    | '/terms'
+  to: '/'
+  id: '__root__' | '/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
-  AiDesignRoute: typeof AiDesignRoute
-  BlogRoute: typeof BlogRoute
-  ContactRoute: typeof ContactRoute
-  CoursesRoute: typeof CoursesRoute
-  LandingRoute: typeof LandingRoute
-  LoginRoute: typeof LoginRoute
-  PrivacyRoute: typeof PrivacyRoute
-  TemplatesRoute: typeof TemplatesRoute
-  TermsRoute: typeof TermsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/terms': {
-      id: '/terms'
-      path: '/terms'
-      fullPath: '/terms'
-      preLoaderRoute: typeof TermsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/templates': {
-      id: '/templates'
-      path: '/templates'
-      fullPath: '/templates'
-      preLoaderRoute: typeof TemplatesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/privacy': {
-      id: '/privacy'
-      path: '/privacy'
-      fullPath: '/privacy'
-      preLoaderRoute: typeof PrivacyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/login': {
-      id: '/login'
-      path: '/login'
-      fullPath: '/login'
-      preLoaderRoute: typeof LoginRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/landing': {
-      id: '/landing'
-      path: '/landing'
-      fullPath: '/landing'
-      preLoaderRoute: typeof LandingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/courses': {
-      id: '/courses'
-      path: '/courses'
-      fullPath: '/courses'
-      preLoaderRoute: typeof CoursesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/blog': {
-      id: '/blog'
-      path: '/blog'
-      fullPath: '/blog'
-      preLoaderRoute: typeof BlogRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/ai-design': {
-      id: '/ai-design'
-      path: '/ai-design'
-      fullPath: '/ai-design'
-      preLoaderRoute: typeof AiDesignRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -257,16 +53,6 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
-  AiDesignRoute: AiDesignRoute,
-  BlogRoute: BlogRoute,
-  ContactRoute: ContactRoute,
-  CoursesRoute: CoursesRoute,
-  LandingRoute: LandingRoute,
-  LoginRoute: LoginRoute,
-  PrivacyRoute: PrivacyRoute,
-  TemplatesRoute: TemplatesRoute,
-  TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
