@@ -61,14 +61,14 @@ const quickLinks = [
   { href: "#lead-form", label: "تواصل معنا", icon: Phone },
 ];
 
-function LandingPage() {
+export function LandingPage() {
   const [sent, setSent] = useState(false);
 
   return (
     <div className="min-h-screen bg-[var(--bg-white)] text-[var(--text-dark)]" dir="rtl">
       <header className="border-b border-[var(--primary-color)]/10 bg-white/95 backdrop-blur">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
-          <a href="/" aria-label="binaa LAB" className="flex items-center">
+          <a href={import.meta.env.BASE_URL} aria-label="binaa LAB" className="flex items-center">
             <img src={binaaWordmark} alt="binaa LAB" className="h-14 w-auto object-contain md:h-16" />
           </a>
           <a
